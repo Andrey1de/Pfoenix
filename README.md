@@ -2,6 +2,40 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.3.
 
+Main goal is to create project on newest build environment
+
+## Build environments Version table 
+Console command :
+C:\Works ng v
+
+Angular CLI: 7.1.3
+Node: 8.12.0
+OS: win32 x64
+Angular: 7.1.4
+... animations, common, compiler, compiler-cli, core, forms
+... language-service, platform-browser, platform-browser-dynamic
+... router
+
+Package                           Version
+-----------------------------------------------------------
+@angular-devkit/architect         0.11.3
+@angular-devkit/build-angular     0.11.3
+@angular-devkit/build-optimizer   0.11.3
+@angular-devkit/build-webpack     0.11.3
+@angular-devkit/core              7.1.3
+@angular-devkit/schematics        7.1.3
+@angular/cdk                      7.2.0
+@angular/cli                      7.1.3
+@angular/material                 7.2.0
+@ngtools/webpack                  7.1.3
+@schematics/angular               7.1.3
+@schematics/update                0.11.3
+rxjs                              6.3.3
+typescript                        3.1.6
+webpack                           4.23.1
+
+
+
 ## Additional technologies
 
 - Added Materials support to use MaterialDasheboard
