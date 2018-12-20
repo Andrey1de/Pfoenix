@@ -1,14 +1,19 @@
 
 
 <div class="grid-container">
-  <h1 class="mat-h1">Dashboard</h1>
+  <h3 class="mat-h1">Dashboard</h3>
+  <strong>Num#:</strong> {{itemSvc.Items.length}}
+  &nbsp;
+  <strong>KeyWord:</strong> {{itemSvc.lastKeyword}}
   <mat-grid-list cols="2" rowHeight="400px">
     <mat-grid-tile *ngFor="let card  of itemSvc.Items " [colspan]="1" [rowspan]="1">
       <mat-card class="dashboard-card"
          [ngStyle]="{'background-color': !!card.bookmark  ? 'gold' : 'white' }">
          <mat-card-header>
           <mat-card-title>
-            {{card.name}} <span *ngIf="card.bookmark"> BOKMARK</span>
+             <i *ngIf="card.bookmark" class="fa fa-bookmark" aria-hidden="true"></i>
+             {{card.name}} 
+                 
              <button mat-icon-button class="more-button" 
               [matMenuTriggerFor]="menu" aria-label="Toggle menu">
               <mat-icon>more_vert</mat-icon>

@@ -16,12 +16,14 @@ export class FetchDataComponent implements OnInit {
 
   ngOnInit() {
    
-    this.queryItems();
+    // this.galeryKeyword = 'qwerty';
+    // this.queryItems();
+
   }
 
 
   constructor(private items: ItemsService) {
-    this.galeryKeyword = 'qwerty';
+   this.galeryKeyword = items.lastKeyword;
     
   }
 

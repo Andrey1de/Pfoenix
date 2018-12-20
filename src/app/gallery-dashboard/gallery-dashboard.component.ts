@@ -21,6 +21,7 @@ export class GalleryDashboardComponent {
   setBookmark(item : Item , toBookmark : boolean)
   {
     item.bookmark = toBookmark;
+    this.itemSvc.setBookmark(item , toBookmark );
   }
 
   

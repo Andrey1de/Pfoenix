@@ -15,10 +15,11 @@ export class AppComponent implements OnInit {
   //    return this.items.lastKeyword;
   //   }
 
-  constructor(public items: ItemsService) {
-
+  constructor(public itemSvc: ItemsService) {
+    this.itemSvc.query('qwerty');
   }
 
   ngOnInit() {
+    
   }
 }
