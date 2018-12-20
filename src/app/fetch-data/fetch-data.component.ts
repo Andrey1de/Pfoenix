@@ -9,17 +9,20 @@ import { Item } from '../gallery/gallery.item';
   styleUrls: ['./fetch-data.component.css']
 })
 export class FetchDataComponent implements OnInit {
-  galeryKeyword: string;
+  galeryKeyword: string = '';
   get lastSearch() { return this.items.lastSearch; }
   get lastUrl() { return this.items.ItemDataUrl + this.items.lastKeyword; }
   get Items(): Item[] { return this.items.Items; }
 
   ngOnInit() {
+   
+    this.queryItems();
   }
 
 
   constructor(private items: ItemsService) {
-
+    this.galeryKeyword = 'qwerty';
+    
   }
 
 

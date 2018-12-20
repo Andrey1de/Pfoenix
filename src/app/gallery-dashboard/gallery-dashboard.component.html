@@ -2,27 +2,29 @@
 
 <div class="grid-container">
   <h1 class="mat-h1">Dashboard</h1>
-  <mat-grid-list cols="2" rowHeight="350px">
-    <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
-      <mat-card class="dashboard-card">
+  <mat-grid-list cols="2" rowHeight="400px">
+    <mat-grid-tile *ngFor="let card  of itemSvc.Items " [colspan]="1" [rowspan]="1">
+      <mat-card class="dashboard-card"
+         [ngStyle]="{'background-color': !!card.bookmark  ? 'gold' : 'white' }">
          <mat-card-header>
           <mat-card-title>
-            {{card.title}}
-            <button mat-icon-button class="more-button" 
+            {{card.name}} <span *ngIf="card.bookmark"> BOKMARK</span>
+             <button mat-icon-button class="more-button" 
               [matMenuTriggerFor]="menu" aria-label="Toggle menu">
               <mat-icon>more_vert</mat-icon>
             </button>
             <mat-menu #menu="matMenu" xPosition="before">
-              <button mat-menu-item>LIKE</button>
-              <button mat-menu-item>SHARE</button>
-            </mat-menu>
+              <button mat-menu-item (click)="setBookmark(card,true)">LIKE</button>
+              <button mat-menu-item (click)="setBookmark(card,false)">UNLIKE</button>
+            </mat-menu>  
           </mat-card-title>
            <div mat-card-avatar 
-           [ngStyle]="{'background-image' : avatar0 , 'background-size': 'cover'}"></div>
-          <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+            [ngStyle]="{'background-image' : card.owner.avatar_url , 'background-size': 'cover'}">
+           </div>
+          <mat-card-subtitle>{{card.full_name}}</mat-card-subtitle>  
         </mat-card-header>
           <img mat-card-image 
-              src="https://material.angular.io/assets/img/examples/shiba2.jpg" 
+              src="{{card.owner.avatar_url}}" 
               alt="Photo of a Shiba Inu"
               style=" display: block;
                     max-width : 180px;
@@ -31,12 +33,12 @@
 
               
          <mat-card-content class="dashboard-card-content">
-            The Shiba Inu is hgjgfj
-            fdhdh gfngfn
+          Type : {{card.owner.type}}
          </mat-card-content>  
-        <mat-card-actions>
-          <button mat-button>LIKE</button>
-          <button mat-button>SHARE</button>
+         <mat-card-actions>
+ 
+          <button mat-button (click)="setBookmark(card,true)">LIKE</button>
+         <button mat-button (click)="setBookmark(card,false)">UNLIKE</button> 
         </mat-card-actions>
       </mat-card>
     </mat-grid-tile>
@@ -44,20 +46,3 @@
 </div>
 
 
-<!-- <mat-card-header>
-           <div mat-card-avatar  [ngStyle]="{'background-image' : avatar0 , 'background-size': 'cover'}" ></div>
-          <mat-card-title>Shiba Inu</mat-card-title> 
-          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-        <mat-card-content>
-          <p>
-            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-            bred for hunting.
-          </p>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-button>LIKE</button>
-          <button mat-button>SHARE</button>
-        </mat-card-actions> -->

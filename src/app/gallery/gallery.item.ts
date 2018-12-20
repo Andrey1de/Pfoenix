@@ -73,6 +73,7 @@ export interface Item {
   watchers: number;
   default_branch: string;
   score: number;
+  bookmark: boolean;
 }
 export interface License {
     key: string;
@@ -80,6 +81,7 @@ export interface License {
     spdx_id: string;
     url: string;
     node_id: string;
+   
 }
 
 export interface Owner {

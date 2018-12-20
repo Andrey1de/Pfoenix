@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'fetch', component: FetchDataComponent },
   {
     path: '',
-    redirectTo: '/gallery',
+    redirectTo: '/fetch',
     pathMatch: 'full'
   },
   { path: '**', component: PageNotFoundComponent }
