@@ -7,7 +7,7 @@ Main goal is to create project on newest build environment
 ## Build environments Version table 
 Console command :
 C:\Works ng v
-
+ng 
 Angular CLI: 7.1.3
 Node: 8.12.0
 OS: win32 x64
