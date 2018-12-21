@@ -9,7 +9,9 @@ interface ItemsRootObject {
   incomplete_results: boolean;
   items: Item[];
  }
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class ItemsService {
      readonly ItemDataUrl: string;
      lastKeyword: string ;
